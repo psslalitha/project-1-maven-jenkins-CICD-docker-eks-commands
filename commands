@@ -1,0 +1,21 @@
+1  aws eks update-kubeconfig --name project-eks
+    2  docker login ghcr.io -u psslalitha -p git-token
+    3  export TRIVY_AUTH_URL="https://ghcr.io"
+    4  export TRIVY_TOKEN="git-token"
+    5  trivy --version
+    6  aws eks update-kubeconfig --name project-eks --region=ap-south-1
+    7  cat /root/.kube/config
+    8  ls
+    9  kubectl get deployment
+   10  kubectl get svc
+   11  kubectl create namespace three-tier
+   12  kubectl create namespace argocd
+   13  kubectl apply  -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.4.7/manifests/install.yaml
+   14  kubectl get pods -n argocd
+   15  kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+   16  kubectl get svc -n argocd
+   17  kubectl get pods -n argocd
+   18  kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
+   19  echo " cGI4cW8xYzIxdUh2NXdHVw==" | base64 --decode
+   20  echo "cGI4cW8xYzIxdUh2NXdHVw==" | base64 --decode
+   21  kubectl get svc -n three-tier
